@@ -5,16 +5,16 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Craft Beer News</h1>
-        <p>Have a look around.</p>
+        <h1>New Feed</h1>
     </div>
 </div>
 <div class="container">
-    <ul>
-        {% for article in articles %}
-        <li><a href="{{article.url}}">{{ article.title }}</a></li>
-        {% endfor %}
-    </ul>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <hr>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
 
   <footer>
     <p>&copy; 2016 Pablo Alcocer</p>

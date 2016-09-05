@@ -5,14 +5,15 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Craft Beer News</h1>
-        <p>Have a look around.</p>
+        <h1>News Feeds</h1>
     </div>
 </div>
 <div class="container">
+    <a href="{% url 'new_feed' %}" class="btn btn-primary">New Feed</a>
+    <hr>
     <ul>
-        {% for article in articles %}
-        <li><a href="{{article.url}}">{{ article.title }}</a></li>
+        {% for feed in feeds %}
+        <li><a href="{{feed.url}}">{{ feed.title }}</a></li>
         {% endfor %}
     </ul>
 
