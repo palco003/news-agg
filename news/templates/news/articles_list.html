@@ -5,16 +5,21 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Craft Beer News</h1>
-        <p>Have a look around.</p>
+        <h1>Beer Gator</h1>
+        <p>A news aggregator tailored for beer drinkers.</p>
+        <p>Built using Python + Django with Bootstrap.</p>
     </div>
 </div>
 <div class="container">
-    <ul>
-        {% for article in articles %}
-        <li><a href="{{article.url}}">{{ article.title }}</a></li>
+    {% for row in rows %}
+    <div class="col-md-6">
+        {% for entry in row %}
+        <h2>{{entry.title}}</h2>
+        <p>{{entry.description | safe}}</p>
+        <p><a href="{{entry.url}}" target="_blank" class="btn btn-primary">View Details</a></p>
         {% endfor %}
-    </ul>
+    </div>
+    {% endfor %}
 
   <footer>
     <p>&copy; 2016 Pablo Alcocer</p>
